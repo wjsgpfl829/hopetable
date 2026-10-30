@@ -376,7 +376,7 @@ a:focus-visible{outline:3px solid #CDEBD6;outline-offset:3px}
     <div class="inner split">
       <div class="stage-text-top">
         <p class="eyebrow rv" data-at="0">가장 오래 마음에 남은 한마디</p>
-        <p class="setup rv" data-at="0.06">매일 무엇을 먹일지 고민하고, 장을 보고, 밥을 짓는 일.<br>누군가에게는 당연한 하루가, 홀로 아이를 키우거나 아픈 몸의 양육자에게는 버거운 하루입니다.</p>
+        <p class="setup rv" data-at="0.06">매일 무엇을 먹일지 고민하고, 장을 보고, 밥을 짓는 일.<br>누군가에게는 당연한 하루가,<br><mark class="hi">홀로 아이를 키우거나 아픈 몸의 양육자</mark>에게는<br><mark class="hi">버거운 하루</mark>입니다.</p>
         <p class="quote">
           <span class="rv" data-at="0.3">"반찬지원이 되어</span>
           <span class="rv" data-at="0.4">잠시라도 쉴 틈이 생겨,</span>
@@ -555,6 +555,13 @@ body > section.cur.back{animation-name:pageInBack}
 .pager .dots i.on{background:var(--green)}
 @media (max-width:560px){.pager .dots{display:none}.pager button{padding:10px 14px}}
 @media (prefers-reduced-motion:reduce){body > section.cur{animation:none}}
+</style>
+<style>
+/* 7쪽 강조: 형광펜이 왼쪽에서 오른쪽으로 칠해짐 */
+.setup .hi{background:linear-gradient(transparent 52%,rgba(159,216,179,.45) 52%) no-repeat;background-size:100% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;color:#FFFFFF;font-weight:700;padding:0 2px}
+.js .setup .hi{background-size:0 100%;transition:background-size .9s ease .6s}
+.js .setup.on .hi{background-size:100% 100%}
+.js .setup.on .hi + br + .hi{transition-delay:1.4s}
 </style>
 <nav class="pager" aria-label="페이지 넘기기">
   <button type="button" class="prev" aria-label="이전 페이지">◀ 이전</button>
